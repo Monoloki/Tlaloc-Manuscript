@@ -16,6 +16,7 @@ public abstract class Item : ScriptableObject {
     public GameObject model;
     public ItemType type;
     public Sprite sprite;
+    [ReadOnly]
     public int iD;
     [TextArea(15, 20)]
     public string description;
