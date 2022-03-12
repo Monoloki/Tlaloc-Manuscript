@@ -3,13 +3,14 @@ using System.Collections.Generic;
 
 using UnityEngine;
 
-//[CreateAssetMenu(fileName = "ArrayOfItems", menuName = "Items/ArrayOfAllItems")]
+[CreateAssetMenu(fileName = "ArrayOfItems", menuName = "Items/ArrayOfAllItems")]
 public class ArrayOfAllItems : ScriptableObject {
 
-    public Item[] items;
-
+    [ReadOnly, SerializeField]
     private int lastUsedID;
 
+    public Item[] items;
+    
     private void Awake() {
         items = new Item[2000];
     }

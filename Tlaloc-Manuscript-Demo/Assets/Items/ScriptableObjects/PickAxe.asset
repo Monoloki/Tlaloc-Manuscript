@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88e43689c203ec54e8c14c93916482a0, type: 3}
   m_Name: PickAxe
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
+  prefab: {fileID: 4522703002279214647, guid: d8fa0ceb8f692dc4c96a70cf8d8c9215, type: 3}
   model: {fileID: 0}
   type: 0
   sprite: {fileID: 0}
-  iD: 1
+  itemName: 
+  iD: 2
   description: 

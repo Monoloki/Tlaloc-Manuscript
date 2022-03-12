@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88e43689c203ec54e8c14c93916482a0, type: 3}
   m_Name: Axe
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
+  prefab: {fileID: 2675325248348106343, guid: 9f9bbbf4632413f46a4783b63fad5617, type: 3}
   model: {fileID: 0}
   type: 0
   sprite: {fileID: 0}
-  iD: 0
+  itemName: Axe
+  iD: 1
   description: 
