@@ -8,12 +8,13 @@ public enum ItemType {
     Trash,
     Gold,
     Material,
-    Default
+    Default,
+    Book
 }
 
 public abstract class Item : ScriptableObject {
-    public GameObject prefab;
-    public GameObject model;
+    public GameObject prefabOfItem;
+    public GameObject prefabToHoldInHand;
     public ItemType type;
     public Sprite sprite;
     public string itemName;
@@ -22,9 +23,9 @@ public abstract class Item : ScriptableObject {
     public string description;
 
     public virtual void Awake() {
-        var itemArray = Resources.Load<ArrayOfAllItems>("Arrays/ItemArray");
-        iD = itemArray.GetNewID();
-        itemArray.items[iD] = this;
+        //var itemArray = Resources.Load<ArrayOfAllItems>("Arrays/ItemArray");
+        //iD = itemArray.GetNewID();
+        //itemArray.items[iD] = this;
     }
 
     private void OnValidate() {

@@ -7,7 +7,8 @@ public class DefaultItem : Item {
 
     public override void Awake() {
         base.Awake();
-        type = ItemType.Default;
+
+        //type = ItemType.Default;
     }
 
 }

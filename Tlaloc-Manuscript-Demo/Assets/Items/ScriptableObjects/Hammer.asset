@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88e43689c203ec54e8c14c93916482a0, type: 3}
   m_Name: Hammer
   m_EditorClassIdentifier: 
-  prefab: {fileID: 2397084141604280897, guid: b2d553a587e18ef4093d39b583742ef7, type: 3}
-  model: {fileID: 0}
+  prefabOfItem: {fileID: 2397084141604280897, guid: b2d553a587e18ef4093d39b583742ef7, type: 3}
+  prefabToHoldInHand: {fileID: 0}
   type: 0
   sprite: {fileID: 0}
-  itemName: 
+  itemName: Hammer
   iD: 3
   description: 

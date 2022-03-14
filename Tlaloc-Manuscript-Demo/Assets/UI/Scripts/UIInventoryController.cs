@@ -8,6 +8,7 @@ public class UIInventoryController : MonoBehaviour {
     [SerializeField] private GameObject itemSlotPrefab;
     [SerializeField] private Inventory playerInventory;
     [SerializeField] private GridLayoutGroup gridLayout;
+    [SerializeField] private ItemDescriptionWindowController itemDescriptionWindowController;
 
     public Dictionary<Item, InventorySlotPrefab> activeItemsSlots = new Dictionary<Item, InventorySlotPrefab>();
 
@@ -23,6 +24,8 @@ public class UIInventoryController : MonoBehaviour {
 
         if (!activeItemsSlots.ContainsKey(_item)) {
             var slot = Instantiate(itemSlotPrefab,transform).GetComponent<InventorySlotPrefab>();
+            slot.itemRef = _item;
+            slot.itemDescriptionWindowController = this.itemDescriptionWindowController;
             activeItemsSlots.Add(_item, slot);
         }
 

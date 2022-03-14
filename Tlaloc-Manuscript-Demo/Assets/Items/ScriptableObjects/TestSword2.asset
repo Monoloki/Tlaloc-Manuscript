@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88e43689c203ec54e8c14c93916482a0, type: 3}
   m_Name: TestSword2
   m_EditorClassIdentifier: 
-  prefab: {fileID: 1022408777543613414, guid: 4beb8c0d83b03974189e019f570096e0, type: 3}
-  model: {fileID: 0}
+  prefabOfItem: {fileID: 1022408777543613414, guid: 4beb8c0d83b03974189e019f570096e0, type: 3}
+  prefabToHoldInHand: {fileID: 0}
   type: 1
   sprite: {fileID: 0}
-  itemName: 
-  iD: 4
+  itemName: TestSword2
+  iD: 5
   description: 
