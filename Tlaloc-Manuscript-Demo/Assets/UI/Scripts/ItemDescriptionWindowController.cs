@@ -7,9 +7,12 @@ using TMPro;
 public class ItemDescriptionWindowController : MonoBehaviour
 {
     [SerializeField] private InventoryPanelController inventoryPanelController;
+    [SerializeField] private UIInventoryController uIInventoryController;
+
     public TMP_Text itemNameLabel;
     public GameObject itemDescriptionWindow;
-    public Item activeItem;
+
+    [HideInInspector] public Item activeItem;
 
     public void OnEquipLeftButtonClick() {
         switch (activeItem.type) {
@@ -25,6 +28,8 @@ public class ItemDescriptionWindowController : MonoBehaviour
             default:
                 break;
         }
+
+        OnCloseButtonClick();
     }
 
     public void OnEquipRightButtonClick() {
@@ -41,10 +46,15 @@ public class ItemDescriptionWindowController : MonoBehaviour
             default:
                 break;
         }
+
+        OnCloseButtonClick();
     }
 
     public void OnDropButtonClick() {
 
+        //drop
+
+        OnCloseButtonClick();
     }
 
     public void OnCloseButtonClick() {
@@ -57,4 +67,9 @@ public class ItemDescriptionWindowController : MonoBehaviour
     }
 
 
+    public void UpdateInventoryIcon() {
+       
+
+    
+    }
 }

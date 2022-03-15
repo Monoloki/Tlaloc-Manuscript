@@ -37,13 +37,17 @@ public class UIInventoryController : MonoBehaviour {
 
     }
 
-    public void RefreshInventoryUI() {
-        foreach (var inventorySlot in playerInventory.container) {
-            
+    // Remove UI method
+    public void removeUISlot(Item _item) {
+
+        Destroy(activeItemsSlots[_item].gameObject);
+
+        if (!isInvoking) {
+            StartCoroutine(TurnOffGridLayerGroup());
         }
     }
 
-    private void UpdateAmount(Item _item, int _newAmount) {
+    public void UpdateAmount(Item _item, int _newAmount) {
         if (_newAmount > 1) {
             activeItemsSlots[_item].ItemLabel.text = $"{activeItemsSlots[_item].name} \n {_newAmount}";
         }
