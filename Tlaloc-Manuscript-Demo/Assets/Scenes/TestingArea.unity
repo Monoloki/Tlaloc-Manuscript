@@ -1699,6 +1699,8 @@ MonoBehaviour:
   leftHandToolSlot: {fileID: 1758345313}
   rightHandToolSlot: {fileID: 429116946}
   bookSlot: {fileID: 17202976}
+  playerInventory: {fileID: 11400000, guid: 57187c21a61384c4aa439d1397753f86, type: 2}
+  uIInventoryController: {fileID: 1566930108}
   slotPrefab: {fileID: 8389472075502126470, guid: 50a6e353d7bfe1e4ea6a57231f4fe850, type: 3}
 --- !u!1 &660713558
 GameObject:
@@ -2393,7 +2395,7 @@ GameObject:
   - component: {fileID: 1119556514}
   - component: {fileID: 1119556516}
   m_Layer: 5
-  m_Name: Background
+  m_Name: InventoryBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3356,6 +3358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6709ad1a7c348d41a0f9ad2834765bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventoryPanelController: {fileID: 475933946}
   itemSlotPrefab: {fileID: 8389472075502126470, guid: 50a6e353d7bfe1e4ea6a57231f4fe850, type: 3}
   playerInventory: {fileID: 11400000, guid: 57187c21a61384c4aa439d1397753f86, type: 2}
   gridLayout: {fileID: 1566930107}
@@ -3451,7 +3454,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryPanelController: {fileID: 475933946}
-  inventory: {fileID: 11400000, guid: 57187c21a61384c4aa439d1397753f86, type: 2}
+  uIInventoryController: {fileID: 1566930108}
   itemNameLabel: {fileID: 776631193}
   itemDescriptionWindow: {fileID: 1573540038}
   activeItem: {fileID: 0}

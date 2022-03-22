@@ -12,7 +12,7 @@ public class ItemDescriptionWindowController : MonoBehaviour
     public TMP_Text itemNameLabel;
     public GameObject itemDescriptionWindow;
 
-    [HideInInspector] public Item activeItem;
+    public Item activeItem;
 
     public void OnEquipLeftButtonClick() {
         switch (activeItem.type) {

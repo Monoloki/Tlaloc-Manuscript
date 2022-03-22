@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class UIInventoryController : MonoBehaviour {
 
+    [SerializeField] private InventoryPanelController inventoryPanelController;
     [SerializeField] private GameObject itemSlotPrefab;
     [SerializeField] private Inventory playerInventory;
     [SerializeField] private GridLayoutGroup gridLayout;
@@ -18,6 +19,24 @@ public class UIInventoryController : MonoBehaviour {
         gridLayout.enabled = false;
     }
 
+    public void CreateUiSlot(Item _item, int _amount) {
+        gridLayout.enabled = true;
+
+        var slot = Instantiate(itemSlotPrefab, transform).GetComponent<InventorySlotPrefab>();
+        slot.itemRef = _item;
+        slot.itemDescriptionWindowController = this.itemDescriptionWindowController;
+
+        if (activeItemsSlots[_item] == null) {
+            activeItemsSlots[_item] = slot;
+        }         
+
+        AddAmountLabel(_item, 0);
+
+        if (!isInvoking) {
+            StartCoroutine(TurnOffGridLayerGroup());
+        }
+    }
+
     public void AddItemToInventoryUI(Item _item, int _amount) {
 
         gridLayout.enabled = true;
@@ -29,7 +48,7 @@ public class UIInventoryController : MonoBehaviour {
             activeItemsSlots.Add(_item, slot);
         }
 
-        UpdateAmount(_item, _amount);
+        AddAmountLabel(_item, 0);
 
         if (!isInvoking) {
             StartCoroutine(TurnOffGridLayerGroup());
@@ -47,13 +66,9 @@ public class UIInventoryController : MonoBehaviour {
         }
     }
 
-    public void UpdateAmount(Item _item, int _newAmount) {
-        if (_newAmount > 1) {
-            activeItemsSlots[_item].ItemLabel.text = $"{activeItemsSlots[_item].name} \n {_newAmount}";
-        }
-        else {
-            activeItemsSlots[_item].ItemLabel.text = $"{_item.itemName}";
-        }
+    public void AddAmountLabel(Item _item, int _amountToAdd) {
+        var e = inventoryPanelController.FindItemInInventoryByName(_item.itemName).amount;
+        activeItemsSlots[_item].ItemLabel.text = $"{_item.itemName} \n {e + _amountToAdd}";
     }
 
     private IEnumerator TurnOffGridLayerGroup() {

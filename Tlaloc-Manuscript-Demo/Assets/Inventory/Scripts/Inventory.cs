@@ -56,6 +56,6 @@ public class InventorySlot {
     }
 
     public void AddAmount(int value) {
-        amount += amount;
+        amount += value;
     }
 }
