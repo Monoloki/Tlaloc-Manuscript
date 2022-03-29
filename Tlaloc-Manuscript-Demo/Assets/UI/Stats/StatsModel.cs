@@ -10,6 +10,9 @@ public class StatsModel : MonoBehaviour
 
     public Action OnValueChange;
 
+    public Action OnLevelUp;
+
+    [HideInInspector]
     public bool reachedMaxLevel = false;
 
     public int level { get; private set; }
@@ -20,6 +23,10 @@ public class StatsModel : MonoBehaviour
 
             if (!reachedMaxLevel) {               
                 var _level = Mathf.FloorToInt(value / 100);
+
+                if (level < _level) OnLevelUp?.Invoke();
+
+
                 if (_level >= maxLevel) {
                     reachedMaxLevel = true;
                     level = maxLevel;
