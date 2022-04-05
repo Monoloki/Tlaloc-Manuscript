@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Axe
   m_EditorClassIdentifier: 
   prefabOfItem: {fileID: 2675325248348106343, guid: 9f9bbbf4632413f46a4783b63fad5617, type: 3}
-  prefabToHoldInHand: {fileID: 0}
+  prefabToHoldInHand: {fileID: 2675325248348106343, guid: 7e881b9c89c916c498e154eb7711be33, type: 3}
   type: 0
   sprite: {fileID: 0}
   itemName: Axe

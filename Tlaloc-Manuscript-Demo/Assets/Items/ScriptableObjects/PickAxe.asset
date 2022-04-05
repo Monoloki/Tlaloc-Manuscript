@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PickAxe
   m_EditorClassIdentifier: 
   prefabOfItem: {fileID: 4522703002279214647, guid: d8fa0ceb8f692dc4c96a70cf8d8c9215, type: 3}
-  prefabToHoldInHand: {fileID: 0}
+  prefabToHoldInHand: {fileID: 4522703002279214647, guid: e2d36622cd8c8e8439257ca50df4cfbb, type: 3}
   type: 0
   sprite: {fileID: 0}
   itemName: PickAxe

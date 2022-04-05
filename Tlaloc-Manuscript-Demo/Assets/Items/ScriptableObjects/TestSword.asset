@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TestSword
   m_EditorClassIdentifier: 
   prefabOfItem: {fileID: 5710804776210778422, guid: c2ee17b76fab5ae4191d1c2dd39d8d3b, type: 3}
-  prefabToHoldInHand: {fileID: 0}
+  prefabToHoldInHand: {fileID: 5710804776210778422, guid: 435d3fc35185a99459f762b05963e612, type: 3}
   type: 1
   sprite: {fileID: 0}
   itemName: TestSword

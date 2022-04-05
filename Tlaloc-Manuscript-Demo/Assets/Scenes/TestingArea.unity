@@ -1380,7 +1380,7 @@ MonoBehaviour:
   m_SphereCastRadius: 0.1
   m_RaycastMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 55
   m_RaycastTriggerInteraction: 2
   m_HitClosestOnly: 0
   m_HoverToSelect: 0
@@ -1602,7 +1602,7 @@ GameObject:
   - component: {fileID: 196343729}
   - component: {fileID: 196343728}
   - component: {fileID: 196343727}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
@@ -1702,8 +1702,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.1070709, y: 1.7974615, z: 1.0737705}
-  m_Center: {x: 0.0040245056, y: -0.0062880516, z: -0.0013914108}
+  m_Size: {x: 0.65208054, y: 1.7974615, z: 0.58882713}
+  m_Center: {x: -0.009634018, y: -0.0062880516, z: -0.2438631}
 --- !u!54 &196343728
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2852,6 +2852,7 @@ MonoBehaviour:
   leftHandToolSlot: {fileID: 1758345313}
   rightHandToolSlot: {fileID: 429116946}
   bookSlot: {fileID: 17202976}
+  equipmentController: {fileID: 2594890585351383457}
   playerInventory: {fileID: 11400000, guid: 57187c21a61384c4aa439d1397753f86, type: 2}
   uIInventoryController: {fileID: 1566930108}
   slotPrefab: {fileID: 8389472075502126470, guid: 50a6e353d7bfe1e4ea6a57231f4fe850, type: 3}
@@ -3641,7 +3642,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 813608340}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 0.3, z: 0.1}
+  m_LocalPosition: {x: 1, y: 0.3, z: 0.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 251956731}
@@ -3687,7 +3688,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 936654080}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -4089,7 +4090,7 @@ MonoBehaviour:
   m_SphereCastRadius: 0.1
   m_RaycastMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 55
   m_RaycastTriggerInteraction: 2
   m_HitClosestOnly: 0
   m_HoverToSelect: 0
@@ -7775,7 +7776,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1904221904}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1, y: 0.3, z: 0.1}
+  m_LocalPosition: {x: -1, y: 0.3, z: 0.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 204809956}
@@ -8654,7 +8655,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2594890584750255809}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: -0, y: 0.8, z: -0.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2594890585351383459}
@@ -8701,7 +8702,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2594890585132646224}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.6, y: 0.3, z: 0.6}
+  m_LocalPosition: {x: -0.6, y: 0.3, z: 0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1385631605858142271}
@@ -8742,6 +8743,11 @@ MonoBehaviour:
   leftToolGrabable: {fileID: 204809955}
   rightToolGrabable: {fileID: 251956730}
   bookGrabable: {fileID: 753361725}
+  leftWeaponEquiped: {fileID: 0}
+  rightWeaponEquiped: {fileID: 0}
+  leftToolEquiped: {fileID: 0}
+  rightToolEquiped: {fileID: 0}
+  bookEquiped: {fileID: 0}
   timeToRestore: 2
 --- !u!4 &2594890585351383459
 Transform:
@@ -8770,7 +8776,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2594890585608932025}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.8, z: 0.6}
+  m_LocalPosition: {x: 0, y: 0.6, z: 0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 753361726}
@@ -8801,7 +8807,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2594890586374280943}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.6, y: 0.3, z: 0.6}
+  m_LocalPosition: {x: 0.6, y: 0.3, z: 0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1216907014619079475}

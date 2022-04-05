@@ -9,7 +9,6 @@ public class PlayerManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.TryGetComponent<ItemObject>(out ItemObject _itemObject)) {
-            Debug.Log($"{_itemObject} : {_itemObject.amount}");
             playerInventory.AddItem(_itemObject.item, _itemObject.amount);
             uIInventory.AddItemToInventoryUI(_itemObject.item,_itemObject.amount);
             Destroy(other.gameObject);

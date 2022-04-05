@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Hammer
   m_EditorClassIdentifier: 
   prefabOfItem: {fileID: 2397084141604280897, guid: b2d553a587e18ef4093d39b583742ef7, type: 3}
-  prefabToHoldInHand: {fileID: 0}
+  prefabToHoldInHand: {fileID: 2397084141604280897, guid: 183d2c72713ecf14b8e3bce80690195d, type: 3}
   type: 0
   sprite: {fileID: 0}
   itemName: Hammer
