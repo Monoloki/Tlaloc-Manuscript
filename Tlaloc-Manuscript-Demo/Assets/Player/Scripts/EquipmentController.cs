@@ -26,23 +26,41 @@ public class EquipmentController : MonoBehaviour
     public GameObject rightToolEquiped;
     public GameObject bookEquiped;
 
+    [Header("Equiped items ref")]
+    public Item leftWeaponRef;
+    public Item rightWeaponRef;
+    public Item bookRef;
+
+    [Header("Stats Refs")]
+    public EquipedStatsModel equipedModel;
+    public StatsModel statsModel;
+
     [Header("Settings")]
     [SerializeField] private float timeToRestore = 2f;
 
     //TODO: following camera rotation with degree 
 
     public void EquipItem(EquipmentSlot slot, GameObject itemToInstantiate) {
-        //TODO: if item is equiped than destroy and than instantiate
         switch (slot) {
             case EquipmentSlot.leftWeapon:
                 if (leftWeaponEquiped != null) Destroy(leftWeaponEquiped);
                 leftWeaponEquiped = Instantiate(itemToInstantiate, leftWeaponGrabable.transform);
                 leftWeaponEquiped.transform.localPosition = Vector3.zero;
+
+                var leftWeaponController = leftWeaponEquiped.GetComponent<TestWeaponController>();
+                leftWeaponController.equipedModel = equipedModel;
+                leftWeaponController.statsModel = statsModel;
+
                 break;
             case EquipmentSlot.rightWeapon:
                 if (rightWeaponEquiped != null) Destroy(rightWeaponEquiped);
                 rightWeaponEquiped = Instantiate(itemToInstantiate, rightWeaponGrabable.transform);
                 rightWeaponEquiped.transform.localPosition = Vector3.zero;
+
+                var rightWeaponController = leftWeaponEquiped.GetComponent<TestWeaponController>();
+                rightWeaponController.equipedModel = equipedModel;
+                rightWeaponController.statsModel = statsModel;
+
                 break;
             case EquipmentSlot.leftTool:
                 if (leftToolEquiped != null) Destroy(leftToolEquiped);
@@ -58,12 +76,59 @@ public class EquipmentController : MonoBehaviour
                 if (bookEquiped != null) Destroy(bookEquiped);
                 bookEquiped = Instantiate(itemToInstantiate, bookGrabable.transform);
                 bookEquiped.transform.localPosition = Vector3.zero;
+
+                var bookWeaponController = leftWeaponEquiped.GetComponent<TestWeaponController>();
+                bookWeaponController.equipedModel = equipedModel;
+                bookWeaponController.statsModel = statsModel;
+
                 break;
             default:
                 break;
         }
 
     }
+
+    public void EquipItem(EquipmentSlot slot, GameObject itemToInstantiate, Item itemRef) {
+        switch (slot) {
+            case EquipmentSlot.leftWeapon:
+                if (leftWeaponEquiped != null) Destroy(leftWeaponEquiped);
+                leftWeaponEquiped = Instantiate(itemToInstantiate, leftWeaponGrabable.transform);
+                leftWeaponEquiped.transform.localPosition = Vector3.zero;
+                leftWeaponRef = itemRef;
+                break;
+            case EquipmentSlot.rightWeapon:
+                if (rightWeaponEquiped != null) Destroy(rightWeaponEquiped);
+                rightWeaponEquiped = Instantiate(itemToInstantiate, rightWeaponGrabable.transform);
+                rightWeaponEquiped.transform.localPosition = Vector3.zero;
+                rightWeaponRef = itemRef;
+                break;
+            case EquipmentSlot.leftTool:
+                if (leftToolEquiped != null) Destroy(leftToolEquiped);
+                leftToolEquiped = Instantiate(itemToInstantiate, leftToolGrabable.transform);
+                leftToolEquiped.transform.localPosition = Vector3.zero;
+                break;
+            case EquipmentSlot.rightTool:
+                if (rightToolEquiped != null) Destroy(rightToolEquiped);
+                rightToolEquiped = Instantiate(itemToInstantiate, rightToolGrabable.transform);
+                rightToolEquiped.transform.localPosition = Vector3.zero;
+                break;
+            case EquipmentSlot.book:
+                if (bookEquiped != null) Destroy(bookEquiped);
+                bookEquiped = Instantiate(itemToInstantiate, bookGrabable.transform);
+                bookEquiped.transform.localPosition = Vector3.zero;
+                bookRef = itemRef;
+                break;
+            default:
+                break;
+        }
+
+    }
+
+    //TODO: change later
+    public void UpdateWeaponDmg(GameObject InstantiatedWeapon) {
+        var test = InstantiatedWeapon.GetComponent<TestWeaponController>();
+        
+    } 
 
     #region Basic equipment logic
 

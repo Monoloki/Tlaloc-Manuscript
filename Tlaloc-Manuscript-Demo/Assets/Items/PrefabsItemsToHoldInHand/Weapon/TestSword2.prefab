@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1022408777543613413}
   - component: {fileID: 1022408777543613411}
   - component: {fileID: 1022408777543613410}
+  - component: {fileID: -7208762911322520142}
   m_Layer: 0
   m_Name: TestSword2
   m_TagString: EquipItem
@@ -62,6 +63,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-7208762911322520142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1022408777543613414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 517eecb29de6af045ae424b4b8209227, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 20
+  boxCollider: {fileID: 1022408777543613411}
 --- !u!1001 &7821159167696257355
 PrefabInstance:
   m_ObjectHideFlags: 0

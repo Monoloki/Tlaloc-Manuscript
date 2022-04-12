@@ -19,6 +19,8 @@ public class InventoryPanelController : MonoBehaviour
 
     [SerializeField] private GameObject slotPrefab;
 
+    [SerializeField] private EquipedStatsModel equipedStatsModel;
+
     private InventorySlotPrefab leftWeaponSlotPrefab;
     private InventorySlotPrefab rightWeaponSlotPrefab;
     private InventorySlotPrefab leftToolSlotPrefab;
@@ -33,6 +35,10 @@ public class InventoryPanelController : MonoBehaviour
 
         bookSlotPrefab.itemRef = FindItemInInventoryByName(itemName).item;
         bookSlotPrefab.ItemLabel.text = itemName;
+
+        equipmentController.EquipItem(EquipmentSlot.book, bookSlotPrefab.itemRef.prefabToHoldInHand, bookSlotPrefab.itemRef);
+
+        equipedStatsModel.UpdateEquipedStats();
     }
     public void EquipLeftHandWeapon(string itemName) {
         if (leftWeaponSlotPrefab == null) leftWeaponSlotPrefab = Instantiate(slotPrefab, leftHandWeaponSlot).GetComponent<InventorySlotPrefab>();
@@ -43,7 +49,9 @@ public class InventoryPanelController : MonoBehaviour
         leftWeaponSlotPrefab.itemRef = FindItemInInventoryByName(itemName).item;
         leftWeaponSlotPrefab.ItemLabel.text = itemName;
 
-        equipmentController.EquipItem(EquipmentSlot.leftWeapon,leftWeaponSlotPrefab.itemRef.prefabToHoldInHand);
+        equipmentController.EquipItem(EquipmentSlot.leftWeapon,leftWeaponSlotPrefab.itemRef.prefabToHoldInHand,leftWeaponSlotPrefab.itemRef);
+
+        equipedStatsModel.UpdateEquipedStats();
     }
     public void EquipRightHandWeapon(string itemName) {
         if (rightWeaponSlotPrefab == null) rightWeaponSlotPrefab = Instantiate(slotPrefab, rightHandWeaponSlot).GetComponent<InventorySlotPrefab>();
@@ -54,7 +62,9 @@ public class InventoryPanelController : MonoBehaviour
         rightWeaponSlotPrefab.itemRef = FindItemInInventoryByName(itemName).item;
         rightWeaponSlotPrefab.ItemLabel.text = itemName;
 
-        equipmentController.EquipItem(EquipmentSlot.rightWeapon, rightWeaponSlotPrefab.itemRef.prefabToHoldInHand);
+        equipmentController.EquipItem(EquipmentSlot.rightWeapon, rightWeaponSlotPrefab.itemRef.prefabToHoldInHand, rightWeaponSlotPrefab.itemRef);
+
+        equipedStatsModel.UpdateEquipedStats();
     }
 
     public void EquipLeftHandTool(string itemName) {
@@ -67,6 +77,8 @@ public class InventoryPanelController : MonoBehaviour
         leftToolSlotPrefab.ItemLabel.text = itemName;
 
         equipmentController.EquipItem(EquipmentSlot.leftTool, leftToolSlotPrefab.itemRef.prefabToHoldInHand);
+
+        equipedStatsModel.UpdateEquipedStats();
     }
     public void EquipRightHandTool(string itemName) {
         if (rightToolSlotPrefab == null) rightToolSlotPrefab = Instantiate(slotPrefab, rightHandToolSlot).GetComponent<InventorySlotPrefab>();
@@ -78,6 +90,8 @@ public class InventoryPanelController : MonoBehaviour
         rightToolSlotPrefab.ItemLabel.text = itemName;
 
         equipmentController.EquipItem(EquipmentSlot.rightTool, rightToolSlotPrefab.itemRef.prefabToHoldInHand);
+
+        equipedStatsModel.UpdateEquipedStats();
     }
 
     private void SwapItemUI(InventorySlotPrefab inventorySlotPrefab) {
