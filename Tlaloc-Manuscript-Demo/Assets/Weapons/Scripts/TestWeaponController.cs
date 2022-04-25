@@ -11,11 +11,11 @@ public class TestWeaponController : MonoBehaviour
 
     public EquipedStatsModel equipedModel;
     public StatsModel statsModel;
-
+    
     private void OnTriggerEnter(Collider other) {
         if (other.tag == "Enemy") {
             damage = Random.Range(itemRef.minAttack, itemRef.maxAttack);
-            damage += equipedModel.attackPowerBonus + statsModel.attackPower;
+            damage *= equipedModel.attackPowerBonus + statsModel.attackPower;
             other.GetComponent<TestEnemy>().ApplyDamage(damage);
         }
     }
