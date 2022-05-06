@@ -85,7 +85,6 @@ public class EquipmentController : MonoBehaviour
             default:
                 break;
         }
-
     }
 
     public void EquipItem(EquipmentSlot slot, GameObject itemToInstantiate, Item itemRef) {

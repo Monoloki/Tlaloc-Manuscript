@@ -380,6 +380,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 597877d378d2f69448a456b0ee6e5121, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attributesPoints: 0
   animationCurve:
     serializedVersion: 2
     m_Curve:
@@ -512,6 +513,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  attributePerLevel: 2
   reachedMaxLevel: 0
 --- !u!1 &86904876
 GameObject:
@@ -901,7 +903,7 @@ GameObject:
   - component: {fileID: 154033249}
   - component: {fileID: 154033250}
   m_Layer: 5
-  m_Name: InventoryCanvas
+  m_Name: InventoryStats
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2496,6 +2498,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9f74d1a730cbd74997d772eb118942c, type: 3}
+--- !u!4 &824832398 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7593006130069179828, guid: a9f74d1a730cbd74997d772eb118942c, type: 3}
+  m_PrefabInstance: {fileID: 824832397}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &937284592
 Mesh:
   m_ObjectHideFlags: 0
@@ -7047,22 +7054,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1364701196662549796, guid: 099d8d78db025eb4d81d9268a0d560c5, type: 3}
-      propertyPath: m_Constraints
-      value: 80
-      objectReference: {fileID: 0}
     - target: {fileID: 1364701196662549797, guid: 099d8d78db025eb4d81d9268a0d560c5, type: 3}
       propertyPath: playerPosition
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1364701196719856828, guid: 099d8d78db025eb4d81d9268a0d560c5, type: 3}
-      propertyPath: m_TargetGraphic
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1364701197006616976, guid: 099d8d78db025eb4d81d9268a0d560c5, type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 824832398}
     - target: {fileID: 1364701198579699039, guid: 099d8d78db025eb4d81d9268a0d560c5, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

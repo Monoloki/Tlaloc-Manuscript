@@ -102,7 +102,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1364701196662549793}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 42.002693, y: 12.89, z: 25.52}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2951759519810071285}
@@ -137,7 +137,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!114 &1364701196662549797
 MonoBehaviour:
@@ -153,7 +153,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 200
   currentHP: 0
-  hPBar: {fileID: 1364701196719856828}
+  hpBar: {fileID: 1364701196719856828}
+  expToGive: 0
   playerPosition: {fileID: 0}
 --- !u!1 &1364701196719856826
 GameObject:
