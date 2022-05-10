@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 1267b12263eb6574a8c7819bf655e1ef, type: 2}
 --- !u!1 &51482586
 GameObject:
   m_ObjectHideFlags: 0
@@ -2011,7 +2011,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loadedScenes: 
   activeSpawn: {fileID: 0}
-  waveController: {fileID: 0}
+  waveController: {fileID: 1397249594}
   portal: {fileID: 321160036}
   player: {fileID: 1787465223}
   loadingMaterial: {fileID: 2100000, guid: 78efe022a54eb044eb63536ed9e45ad5, type: 2}
@@ -3480,6 +3480,7 @@ MonoBehaviour:
   activeSpawner: {fileID: 0}
   activeLevelIndex: 0
   activeLevelSpawn: {fileID: 0}
+  levelController: {fileID: 0}
   levelsWaveReference:
   - {fileID: 11400000, guid: 61b9c1ad6f173df488a942b13e8e9fe6, type: 2}
 --- !u!4 &1397249595

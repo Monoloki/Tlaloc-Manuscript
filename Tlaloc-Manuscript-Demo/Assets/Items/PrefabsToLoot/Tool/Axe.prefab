@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2675325248348106345}
   - component: {fileID: 2675325248348106344}
   - component: {fileID: 2675325248348106347}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Axe
   m_TagString: LootableItem
   m_Icon: {fileID: 0}
@@ -87,6 +87,10 @@ PrefabInstance:
     - target: {fileID: 1878273237308662, guid: 0031543705b8c024c916caa648809017, type: 3}
       propertyPath: m_Name
       value: axe01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1878273237308662, guid: 0031543705b8c024c916caa648809017, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4104134117191692, guid: 0031543705b8c024c916caa648809017, type: 3}
       propertyPath: m_RootOrder

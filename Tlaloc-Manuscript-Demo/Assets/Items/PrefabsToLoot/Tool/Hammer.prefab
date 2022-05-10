@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2397084141604280911}
   - component: {fileID: 2397084141604280910}
   - component: {fileID: 2397084141604280909}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Hammer
   m_TagString: LootableItem
   m_Icon: {fileID: 0}
@@ -87,6 +87,10 @@ PrefabInstance:
     - target: {fileID: 1085285520790580, guid: 9f64ed5ce0216394d91f836dbefecf5d, type: 3}
       propertyPath: m_Name
       value: hammer01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1085285520790580, guid: 9f64ed5ce0216394d91f836dbefecf5d, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4529112889726762, guid: 9f64ed5ce0216394d91f836dbefecf5d, type: 3}
       propertyPath: m_RootOrder

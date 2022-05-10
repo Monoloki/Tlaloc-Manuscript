@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4522703002279214641}
   - component: {fileID: 4522703002279214640}
   - component: {fileID: 4522703002279214643}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PickAxe
   m_TagString: LootableItem
   m_Icon: {fileID: 0}
@@ -87,6 +87,10 @@ PrefabInstance:
     - target: {fileID: 1392316285209212, guid: 869385138ceeb3c4e9ed5f72da8d50d7, type: 3}
       propertyPath: m_Name
       value: pickaxe01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1392316285209212, guid: 869385138ceeb3c4e9ed5f72da8d50d7, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4226066258564950, guid: 869385138ceeb3c4e9ed5f72da8d50d7, type: 3}
       propertyPath: m_RootOrder

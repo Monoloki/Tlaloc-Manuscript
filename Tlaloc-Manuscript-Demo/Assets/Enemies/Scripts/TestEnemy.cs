@@ -11,6 +11,8 @@ public class TestEnemy : MonoBehaviour
     [SerializeField] private int expToGive;
     public Transform playerPosition;
 
+    [SerializeField] private Loot[] lootTable;
+
     private void Awake() {
         playerPosition = FindObjectOfType<Camera>().transform;
         currentHP = maxHP;
@@ -19,6 +21,10 @@ public class TestEnemy : MonoBehaviour
 
     private void Update() {
         hpBar.transform.LookAt(playerPosition);
+    }
+
+    private void OnDestroy() {
+        DropLoot();
     }
 
     public void UpdateHP(int newMaxHP) {
@@ -44,5 +50,20 @@ public class TestEnemy : MonoBehaviour
 
     private void GivePlayerExp() {
         FindObjectOfType<StatsModel>().exp += expToGive; 
+    }
+
+    private void DropLoot() {
+        foreach (Loot itemToLoot in lootTable) {
+            if (Random.Range(0,100) <= itemToLoot.chanceToDrop) {
+                var rb = Instantiate(itemToLoot.item, transform.position + Vector3.up * 5, Quaternion.identity).GetComponent<Rigidbody>();
+                rb.AddForce(new Vector3(Random.Range(-4,4),7, Random.Range(-4, 4)), ForceMode.Impulse);
+            }
+        }
+    }
+
+    [System.Serializable]
+    public class Loot {
+        public GameObject item;
+        public float chanceToDrop;
     }
 }

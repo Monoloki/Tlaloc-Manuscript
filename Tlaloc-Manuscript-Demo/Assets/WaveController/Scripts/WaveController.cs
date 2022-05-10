@@ -7,8 +7,12 @@ public class WaveController : MonoBehaviour {
     public GameObject activeSpawner;
     public int activeLevelIndex;
     public LevelSpawn activeLevelSpawn;
+    public LevelController levelController;
 
     [Space(10)]
     [SerializeField] private Wave[] levelsWaveReference;
-   
+
+    private void Awake() {
+        levelController = FindObjectOfType<LevelController>();
+    }
 }
