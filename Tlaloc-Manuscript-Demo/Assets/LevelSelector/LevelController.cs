@@ -11,6 +11,8 @@ public class LevelController : MonoBehaviour
 
     public Transform activeSpawn;
 
+    public Transform hubSpawn;
+
     [SerializeField] private WaveController waveController;
 
     [SerializeField] private MeshRenderer portal;
@@ -49,7 +51,8 @@ public class LevelController : MonoBehaviour
         yield return new WaitForEndOfFrame();
         var levelspawn = FindObjectOfType<LevelSpawn>();
         activeSpawn = levelspawn.transform;
-
+        levelspawn.HubSpawn = hubSpawn;
+        levelspawn.player = player;
         waveController.activeLevelSpawn = levelspawn;
         waveController.activeSpawner = activeSpawn.gameObject;
         
@@ -69,6 +72,15 @@ public class LevelController : MonoBehaviour
             yield return new WaitForEndOfFrame();               
         }
         StartCoroutine(LoadingScene(levelToLoad));
+    }
+
+    public IEnumerator UnloadLevelScenes() {
+        activeLevelIndex = 0;
+        for (int i = 0; i < loadedScenes.Count; i++) {
+            SceneManager.UnloadSceneAsync(loadedScenes[i]);
+            loadedScenes.Remove(loadedScenes[i]);
+            yield return new WaitForEndOfFrame();
+        }
     }
 
     public void TeleportPlayerToActiveSpawn() {
