@@ -9,17 +9,17 @@ public class StatsModel : MonoBehaviour
     private int maxLevel = 30;
 
     public Action OnValueChange;
-
     public Action OnLevelUp;
+    public int attributesPoints = 0;
 
     public AnimationCurve animationCurve;
     public AnimationCurve attackPowerCurve;
     public AnimationCurve spellPowerCurve;
     public AnimationCurve experienceCurve;
 
-    [HideInInspector]
-    public bool reachedMaxLevel = false;
+    [SerializeField] private int attributePerLevel = 2;
 
+    [HideInInspector] public bool reachedMaxLevel = false;
     public int level { get; private set; }
     public int exp {
         get => _exp;
@@ -28,7 +28,10 @@ public class StatsModel : MonoBehaviour
             if (!reachedMaxLevel) {               
                 var _level = Mathf.FloorToInt(value / 100);
 
-                if (level < _level) OnLevelUp?.Invoke();
+                if (level < _level) {
+                    OnLevelUp?.Invoke();
+                    GetAttributesPoints(attributePerLevel);
+                } 
 
                 if (_level >= maxLevel) {
                     reachedMaxLevel = true;
@@ -42,9 +45,7 @@ public class StatsModel : MonoBehaviour
             OnValueChange?.Invoke();
         } 
     }
-
     private int _exp { get; set; }
-
     public int maxHP {
         get => _maxHP;
         set {
@@ -52,9 +53,7 @@ public class StatsModel : MonoBehaviour
             OnValueChange?.Invoke(); 
         } 
     }
-
     private int _maxHP { get; set; }
-
     public int maxMana {
         get => _maxMana;  
         set {
@@ -62,9 +61,7 @@ public class StatsModel : MonoBehaviour
             OnValueChange?.Invoke(); 
         }
     }
-
     private int _maxMana { get; set; }
-
     public int strength { 
         get => _strength;
         set {
@@ -77,9 +74,7 @@ public class StatsModel : MonoBehaviour
             OnValueChange?.Invoke();
         } 
     }
-
     private int _strength { get; set; }
-
     public int intelligence {
         get => _intelligence;
         set {
@@ -92,9 +87,7 @@ public class StatsModel : MonoBehaviour
             OnValueChange?.Invoke();
         } 
     }
-
     private int _intelligence { get; set; }
-
     public int armor {
         get => _armor;
         set {
@@ -110,10 +103,13 @@ public class StatsModel : MonoBehaviour
             OnValueChange?.Invoke();
         } 
     }
-
     private int _armor { get; set; }
-
     public int attackPower { get; private set; }
     public int spellPower { get; private set; }
     public float defence { get; private set; }
+
+
+    public void GetAttributesPoints(int amount) {
+        attributesPoints += amount;
+    }
 }

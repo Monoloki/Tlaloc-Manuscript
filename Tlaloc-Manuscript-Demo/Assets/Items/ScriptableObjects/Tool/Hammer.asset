@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88e43689c203ec54e8c14c93916482a0, type: 3}
+  m_Name: Hammer
+  m_EditorClassIdentifier: 
+  prefabOfItem: {fileID: 2397084141604280897, guid: b2d553a587e18ef4093d39b583742ef7, type: 3}
+  prefabToHoldInHand: {fileID: 2397084141604280897, guid: 183d2c72713ecf14b8e3bce80690195d, type: 3}
+  type: 0
+  sprite: {fileID: 0}
+  itemName: Hammer
+  iD: 3
+  description: 

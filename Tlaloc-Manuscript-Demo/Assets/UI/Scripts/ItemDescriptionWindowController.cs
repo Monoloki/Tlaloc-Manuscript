@@ -14,6 +14,10 @@ public class ItemDescriptionWindowController : MonoBehaviour
 
     public Item activeItem;
 
+    private void Awake() {
+        gameObject.SetActive(false);
+    }
+
     public void OnEquipLeftButtonClick() {
         switch (activeItem.type) {
             case ItemType.Tool:
@@ -66,10 +70,11 @@ public class ItemDescriptionWindowController : MonoBehaviour
         itemNameLabel.text = itemName;
     }
 
-
+    /*
     public void UpdateInventoryIcon() {
        
 
     
     }
+    */
 }
