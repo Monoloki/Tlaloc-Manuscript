@@ -17,6 +17,13 @@ public class UIInventoryController : MonoBehaviour {
 
     private void Awake() {
         gridLayout.enabled = false;
+        CreateStartingEquipment();
+    }
+
+    private void CreateStartingEquipment() {
+        foreach (var item in playerInventory.container) {
+            AddItemToInventoryUI(item.item,item.amount);
+        }
     }
 
     public void CreateUiSlot(Item _item, int _amount) {

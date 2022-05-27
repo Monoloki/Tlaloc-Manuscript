@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2675325248348106342}
   - component: {fileID: 2675325248348106345}
   - component: {fileID: 2675325248348106344}
+  - component: {fileID: 2474428233639549888}
   m_Layer: 0
   m_Name: Axe
   m_TagString: EquipItem
@@ -62,6 +63,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2474428233639549888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2675325248348106343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19ede7f85a1c302429e2919cfc77f657, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2675325249574426596
 PrefabInstance:
   m_ObjectHideFlags: 0

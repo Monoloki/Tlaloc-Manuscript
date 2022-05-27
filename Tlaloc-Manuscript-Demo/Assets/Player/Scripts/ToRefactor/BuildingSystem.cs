@@ -6,62 +6,52 @@ using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.InputSystem;
 
 public class BuildingSystem : MonoBehaviour {
-    public Vector3 hitPositionValue;
-    public bool isHitValue;
+    
 
     [SerializeField] private Transform origin;
     [SerializeField] private Transform targetDirection;
     [SerializeField] private LayerMask layerMask;
     [SerializeField] private float maxDistance;
-
-    [HideInInspector] public GameObject objectToInstantiate;
     [SerializeField] private Material transparentMaterial;
-
-    private GameObject instantiatedBuilding;
-
-    public GameObject[] buildingArray;
 
     private RaycastHit _hit;
     private Vector3 _direction;
+    private Vector3 hitPositionValue;
+    private bool isHitValue;
 
-    public bool clicked = false;
+    [HideInInspector] public GameObject objectToInstantiate;
 
-    private bool isObjectInstantiated = false;
-
-    public InputActionReference toggleReference = null;
-
-    public bool startShowingBuilding = false;
-
-    [SerializeField] private GameObject[] monsters;
+    public bool isObjectInstantiated = false;
+    public GameObject[] buildingArray;
+    public InputActionReference spawnBuilding = null;
+    public bool showBuildingPreview = false;
+    public GameObject instantiatedBuilding;
 
     private void Awake() {
-        toggleReference.action.started += ToggleFunction;     
+        spawnBuilding.action.performed += ToggleSpawnBuilding;     
     }
 
     private void Update(){ 
-        if (clicked) {
+        if (showBuildingPreview) {
             GetRaycastHit();
             ShowBuilding();
         }
     }
 
-    private void ToggleFunction(InputAction.CallbackContext context) {
-        if (startShowingBuilding) {
-            clicked = !clicked;
-
-            if (isObjectInstantiated) {
-                Instantiate(objectToInstantiate, instantiatedBuilding.transform.position, instantiatedBuilding.transform.rotation);
-
-                Destroy(instantiatedBuilding);
-                isObjectInstantiated = false;
-            }
-            else {
-                SpawnObject();
-            }
-        }           
+    private void ToggleSpawnBuilding(InputAction.CallbackContext context) {
+        if (isObjectInstantiated) {
+            SpawnBuilding();
+        }
     }
 
-    private void SpawnObject() {
+    private void SpawnBuilding() {
+        Instantiate(objectToInstantiate, instantiatedBuilding.transform.position, instantiatedBuilding.transform.rotation);
+        Destroy(instantiatedBuilding);
+        isObjectInstantiated = false;
+        showBuildingPreview = false;
+    }
+
+    public void SpawnBuildingPreview() {
 
         if (!isObjectInstantiated) {
             instantiatedBuilding = Instantiate(objectToInstantiate, hitPositionValue, objectToInstantiate.transform.rotation);
@@ -74,9 +64,7 @@ public class BuildingSystem : MonoBehaviour {
                 for (int i = 0; i < renderer.materials.Length; i++) {
                     temporalMaterial[i] = transparentMaterial;
                 }
-
-                renderer.materials = temporalMaterial;
-                
+                renderer.materials = temporalMaterial;    
             }
 
             isObjectInstantiated = true;
@@ -84,22 +72,9 @@ public class BuildingSystem : MonoBehaviour {
     }
 
     private void ShowBuilding(){
-
         if (isHitValue && isObjectInstantiated) {
             instantiatedBuilding.transform.position = hitPositionValue;
         }
-
-        /*
-        if (isHitValue && isObjectInstantiated) {            
-            instantiatedBuilding.transform.position = hitPositionValue;
-        }
-        else if (!isHitValue) {
-            if (instantiatedBuilding != null) {
-                Destroy(instantiatedBuilding);
-                isObjectInstantiated = false;
-            }        
-        }      
-        */
     }
 
     private void GetRaycastHit(){

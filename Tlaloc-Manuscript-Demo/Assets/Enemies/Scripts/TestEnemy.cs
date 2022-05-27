@@ -49,7 +49,7 @@ public class TestEnemy : MonoBehaviour
     }
 
     private void GivePlayerExp() {
-        FindObjectOfType<StatsModel>().exp += expToGive; 
+        FindObjectOfType<StatsModel>(true).exp += expToGive; 
     }
 
     private void DropLoot() {

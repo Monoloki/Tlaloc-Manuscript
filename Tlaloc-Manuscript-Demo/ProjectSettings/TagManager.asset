@@ -8,19 +8,20 @@ TagManager:
   - Item
   - EquipItem
   - LootableItem
+  - Door
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - 
-  - 
+  - Terrain
   - Loot
   - 
   - Enemy
-  - Player
+  - 
   - 
   - 
   - 

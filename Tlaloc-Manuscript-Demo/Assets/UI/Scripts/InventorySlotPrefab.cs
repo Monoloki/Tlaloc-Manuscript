@@ -10,8 +10,10 @@ public class InventorySlotPrefab : MonoBehaviour
     public Item itemRef;
 
     public void ShowDescription() {
-        itemDescriptionWindowController.itemDescriptionWindow.SetActive(true);
-        itemDescriptionWindowController.itemNameLabel.text = itemRef.itemName;
-        itemDescriptionWindowController.activeItem = itemRef;
+        if (itemRef.type == ItemType.Weapon ||itemRef.type == ItemType.Tool) {
+            itemDescriptionWindowController.itemDescriptionWindow.SetActive(true);
+            itemDescriptionWindowController.itemNameLabel.text = itemRef.itemName;
+            itemDescriptionWindowController.activeItem = itemRef;
+        }     
     }
 }

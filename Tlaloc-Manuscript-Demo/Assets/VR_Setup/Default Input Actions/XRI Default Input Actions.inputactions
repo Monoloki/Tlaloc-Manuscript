@@ -1091,18 +1091,9 @@
             "id": "aa24f724-02d3-4971-ae70-f6cbc0ccdebb",
             "actions": [
                 {
-                    "name": "Active Building",
+                    "name": "SpawnBuilding",
                     "type": "Button",
                     "id": "7f3a6e4c-4738-402d-8e42-d3c13645f639",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Active Building Menu",
-                    "type": "Button",
-                    "id": "82fede66-77f9-489b-a736-125ee300271c",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -1117,18 +1108,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Active Building",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "b05c61d6-3d3b-459e-9d57-78a7a60cfcbc",
-                    "path": "<XRController>{LeftHand}/primaryButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Active Building Menu",
+                    "action": "SpawnBuilding",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
