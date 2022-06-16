@@ -1127,7 +1127,7 @@ public partial class @XRIDefaultInputActions : IInputActionCollection2, IDisposa
                     ""name"": """",
                     ""id"": ""353007bc-c341-4e08-8708-fe54fb8aa207"",
                     ""path"": ""<XRController>{RightHand}/primaryButton"",
-                    ""interactions"": """",
+                    ""interactions"": ""Press"",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""SpawnBuilding"",

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
-    [SerializeField] private Inventory playerInventory;
+    public Inventory playerInventory;
     [SerializeField] private UIInventoryController uIInventory;
 
     private void OnTriggerEnter(Collider other) {

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51dfe99fefead214e9c32cfd9d360838, type: 3}
+  m_Name: Storage
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 4194906648300239028, guid: a88105cebdfdb5547b4b73eac6c95d09, type: 3}
+  sprite: {fileID: 21300000, guid: 44ce76a03ecb5fc4fb2a295601f5f4bf, type: 3}
+  requirements:
+  - material: {fileID: 11400000, guid: f48494421600a964f90846bae05b47ed, type: 2}
+    requireAmount: 1
+  - material: {fileID: 11400000, guid: 44382ba3227151f488f5b99b14d04e7b, type: 2}
+    requireAmount: 1
+  - material: {fileID: 11400000, guid: 17294f480c8ac4540a5fc0c2bb9a2380, type: 2}
+    requireAmount: 100

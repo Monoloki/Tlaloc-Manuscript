@@ -12,13 +12,11 @@ public class BuildingUiController : MonoBehaviour
 
     [SerializeField] private GameObject buildingMenu;
     [SerializeField] private Image buildingImage;
-    [SerializeField] private Sprite[] buildingPNG;
-    [SerializeField] private TMP_Text buildingName;
+    [SerializeField] private TMP_Text buildingField;
+    [SerializeField] private TMP_Text requirementsField;
     [SerializeField] private BuildingSystem buildingSystem;
 
     private int activePNG = 0;
-
-    
 
     private void Awake() {
         UpdateUi();
@@ -36,7 +34,8 @@ public class BuildingUiController : MonoBehaviour
     }
 
     public void OnClickChooseButton() {
-        buildingSystem.objectToInstantiate = buildingSystem.buildingArray[activePNG];
+        buildingSystem.objectToInstantiate = buildingSystem.buildingArray[activePNG].prefab;
+        buildingSystem.activeBuilding = buildingSystem.buildingArray[activePNG];
         buildingSystem.showBuildingPreview = true;
         buildingSystem.SpawnBuildingPreview();
     }
@@ -44,7 +43,7 @@ public class BuildingUiController : MonoBehaviour
     public void OnClickNextButton() {
         DestroyBuildingPreview();
         activePNG++;
-        if (activePNG >= buildingPNG.Length) {
+        if (activePNG >= buildingSystem.buildingArray.Length) {
             activePNG = 0;
         }
 
@@ -55,7 +54,7 @@ public class BuildingUiController : MonoBehaviour
         DestroyBuildingPreview();
         activePNG--;
         if (activePNG < 0) {
-            activePNG = buildingPNG.Length - 1;
+            activePNG = buildingSystem.buildingArray.Length - 1;
         }
 
         UpdateUi();
@@ -67,11 +66,15 @@ public class BuildingUiController : MonoBehaviour
     }
 
     private void UpdatePNG() {
-        buildingImage.sprite = buildingPNG[activePNG];
+        buildingImage.sprite = buildingSystem.buildingArray[activePNG].sprite;
     }
 
     private void UpdateText() {
-        buildingName.text = buildingPNG[activePNG].name;
+        buildingField.text = buildingSystem.buildingArray[activePNG].sprite.name;
+        requirementsField.text = "";
+        foreach (var material in buildingSystem.buildingArray[activePNG].requirements) {
+            requirementsField.text += $"{material.material.name} {material.requireAmount}";
+        }
     }
 
     private void DestroyBuildingPreview() {

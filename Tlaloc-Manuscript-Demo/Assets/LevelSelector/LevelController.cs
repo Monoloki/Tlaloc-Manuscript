@@ -6,21 +6,14 @@ using UnityEngine.SceneManagement;
 public class LevelController : MonoBehaviour
 {
     public List<AsyncOperation> scenesToLoad = new List<AsyncOperation>();
-
     public List<int> loadedScenes = new List<int>();
-
     public Transform activeSpawn;
-
     public Transform hubSpawn;
 
     [SerializeField] private WaveController waveController;
-
     [SerializeField] private MeshRenderer portal;
-
     [SerializeField] private GameObject player;
-
     [SerializeField] private Material loadingMaterial;
-
     [SerializeField] private Material doneLoadingMaterial;
 
     private int levelToLoad = 0;
