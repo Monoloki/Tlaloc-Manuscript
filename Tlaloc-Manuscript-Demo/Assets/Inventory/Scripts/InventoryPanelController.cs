@@ -3,8 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InventoryPanelController : MonoBehaviour
+public class InventoryPanelController : Singleton<InventoryPanelController>
 {
+    private void Awake() {
+        UpdateInventoryUI();
+    }
+
     public RectTransform leftHandWeaponSlot;
     public RectTransform rightHandWeaponSlot;
     public RectTransform leftHandToolSlot;
@@ -12,13 +16,9 @@ public class InventoryPanelController : MonoBehaviour
     public RectTransform bookSlot;
 
     [SerializeField] private EquipmentController equipmentController;
-
     [SerializeField] private Inventory playerInventory;
-
     [SerializeField] private UIInventoryController uIInventoryController;
-
     [SerializeField] private GameObject slotPrefab;
-
     [SerializeField] private EquipedStatsModel equipedStatsModel;
 
     private InventorySlotPrefab leftWeaponSlotPrefab;
@@ -27,108 +27,123 @@ public class InventoryPanelController : MonoBehaviour
     private InventorySlotPrefab rightToolSlotPrefab;
     private InventorySlotPrefab bookSlotPrefab;
 
-    public void EquipBook(string itemName) {
+    public void EquipBook(Item item) {
         if (bookSlotPrefab == null) bookSlotPrefab = Instantiate(slotPrefab, bookSlot).GetComponent<InventorySlotPrefab>();
         else if (bookSlotPrefab != null) SwapItemUI(bookSlotPrefab);
 
-        UpdateInventoryUI(itemName);
+        UpdateItemUIWithDestroy(item);
 
-        bookSlotPrefab.itemRef = FindItemInInventoryByName(itemName).item;
-        bookSlotPrefab.ItemLabel.text = itemName;
+        bookSlotPrefab.itemRef = FindItemInInventory(item).item;
+        bookSlotPrefab.ItemLabel.text = item.name;
 
         equipmentController.EquipItem(EquipmentSlot.book, bookSlotPrefab.itemRef.prefabToHoldInHand, bookSlotPrefab.itemRef);
 
         equipedStatsModel.UpdateEquipedStats();
     }
-    public void EquipLeftHandWeapon(string itemName) {
+    public void EquipLeftHandWeapon(Item item) {
         if (leftWeaponSlotPrefab == null) leftWeaponSlotPrefab = Instantiate(slotPrefab, leftHandWeaponSlot).GetComponent<InventorySlotPrefab>();
         else if (leftWeaponSlotPrefab != null) SwapItemUI(leftWeaponSlotPrefab);
 
-        UpdateInventoryUI(itemName);        
+        UpdateItemUIWithDestroy(item);
 
-        leftWeaponSlotPrefab.itemRef = FindItemInInventoryByName(itemName).item;
-        leftWeaponSlotPrefab.ItemLabel.text = itemName;
+        leftWeaponSlotPrefab.itemRef = FindItemInInventory(item).item;
+        leftWeaponSlotPrefab.ItemLabel.text = item.name;
 
         equipmentController.EquipItem(EquipmentSlot.leftWeapon,leftWeaponSlotPrefab.itemRef.prefabToHoldInHand,leftWeaponSlotPrefab.itemRef);
 
         equipedStatsModel.UpdateEquipedStats();
     }
-    public void EquipRightHandWeapon(string itemName) {
+    public void EquipRightHandWeapon(Item item) {
         if (rightWeaponSlotPrefab == null) rightWeaponSlotPrefab = Instantiate(slotPrefab, rightHandWeaponSlot).GetComponent<InventorySlotPrefab>();
         else if (rightWeaponSlotPrefab != null) SwapItemUI(rightWeaponSlotPrefab);
 
-        UpdateInventoryUI(itemName);
+        UpdateItemUIWithDestroy(item);
 
-        rightWeaponSlotPrefab.itemRef = FindItemInInventoryByName(itemName).item;
-        rightWeaponSlotPrefab.ItemLabel.text = itemName;
+        rightWeaponSlotPrefab.itemRef = FindItemInInventory(item).item;
+        rightWeaponSlotPrefab.ItemLabel.text = item.name;
 
         equipmentController.EquipItem(EquipmentSlot.rightWeapon, rightWeaponSlotPrefab.itemRef.prefabToHoldInHand, rightWeaponSlotPrefab.itemRef);
 
         equipedStatsModel.UpdateEquipedStats();
     }
-
-    public void EquipLeftHandTool(string itemName) {
+    public void EquipLeftHandTool(Item item) {
         if (leftToolSlotPrefab == null) leftToolSlotPrefab = Instantiate(slotPrefab, leftHandToolSlot).GetComponent<InventorySlotPrefab>(); 
         else if (leftToolSlotPrefab != null) SwapItemUI(leftToolSlotPrefab);
 
-        UpdateInventoryUI(itemName);
+        UpdateItemUIWithDestroy(item);
 
-        leftToolSlotPrefab.itemRef = FindItemInInventoryByName(itemName).item;
-        leftToolSlotPrefab.ItemLabel.text = itemName;
+        leftToolSlotPrefab.itemRef = FindItemInInventory(item).item;
+        leftToolSlotPrefab.ItemLabel.text = item.name;
 
         equipmentController.EquipItem(EquipmentSlot.leftTool, leftToolSlotPrefab.itemRef.prefabToHoldInHand);
 
         equipedStatsModel.UpdateEquipedStats();
     }
-    public void EquipRightHandTool(string itemName) {
+    public void EquipRightHandTool(Item Item) {
         if (rightToolSlotPrefab == null) rightToolSlotPrefab = Instantiate(slotPrefab, rightHandToolSlot).GetComponent<InventorySlotPrefab>();
         else if (rightToolSlotPrefab != null) SwapItemUI(rightToolSlotPrefab);
 
-        UpdateInventoryUI(itemName);
+        UpdateItemUIWithDestroy(Item);
 
-        rightToolSlotPrefab.itemRef = FindItemInInventoryByName(itemName).item;
-        rightToolSlotPrefab.ItemLabel.text = itemName;
+        rightToolSlotPrefab.itemRef = FindItemInInventory(Item).item;
+        rightToolSlotPrefab.ItemLabel.text = Item.name;
 
         equipmentController.EquipItem(EquipmentSlot.rightTool, rightToolSlotPrefab.itemRef.prefabToHoldInHand);
 
         equipedStatsModel.UpdateEquipedStats();
     }
-
     private void SwapItemUI(InventorySlotPrefab inventorySlotPrefab) {
-        var aa =  FindItemInInventoryByName(inventorySlotPrefab.itemRef.itemName);
+        var item =  FindItemInInventory(inventorySlotPrefab.itemRef);
 
-        if (aa.amount == 1) {
-            uIInventoryController.CreateUiSlot(aa.item,0);
+        if (item.amount == 1) {
+            uIInventoryController.CreateUiSlot(item.item,0);
         }
-        else if (aa.amount > 1) {
-            uIInventoryController.AddAmountLabel(aa.item,0);
+        else if (item.amount > 1) {
+            uIInventoryController.UpdateUILabel(item.item);
         }
          
     }
-
-    public InventorySlot FindItemInInventoryByName(string itemName) {
+    public InventorySlot FindItemInInventory(Item item) {
 
         foreach (var inventorySlot in playerInventory.container) {
-            if (inventorySlot.item.itemName == itemName ) {
+            if (inventorySlot.item.iD == item.iD ) {
                 return inventorySlot;
             }
         }
 
-        Debug.Log($"I dont find item of name:{itemName} in playerInventory");
+        Debug.Log($"I dont find item of name:{item} in playerInventory");
         return null;
-       
     }
 
-    private void UpdateInventoryUI(string _itemName) {
-        var aa = FindItemInInventoryByName(_itemName);
+    private void UpdateItemUIWithDestroy(Item item) {
+        var foundItem = FindItemInInventory(item);
+        item = foundItem.item;
+        var inventorySlot = uIInventoryController.activeItemsSlots[item];
 
-        var a = uIInventoryController.activeItemsSlots[aa.item];
-
-        if (aa.amount > 1) {
-            uIInventoryController.AddAmountLabel(aa.item, -1);
+        if (foundItem.amount > 1) {
+            uIInventoryController.UpdateUILabel(item);
         }
-        else if (aa.amount <= 1) {
-            Destroy(a.gameObject);
+        else if (foundItem.amount <= 1) {
+            Destroy(inventorySlot.gameObject);
+        }
+    }
+
+    private void UpdateItemUI(Item item) {
+        var foundItem = FindItemInInventory(item);
+        item = foundItem.item;
+        var inventorySlot = uIInventoryController.activeItemsSlots[item];
+
+        if (foundItem.amount >= 1) {
+            uIInventoryController.UpdateUILabel(item);
+        }
+        else if (foundItem.amount < 1) {
+            Destroy(inventorySlot.gameObject);
+        }
+    }
+
+    public void UpdateInventoryUI() {
+        foreach (var slot in playerInventory.container) {
+            UpdateItemUI(slot.item);
         }
     }
 

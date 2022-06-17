@@ -166,6 +166,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5aefd81db236804fa47833206547d73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HubSpawn: {fileID: 0}
+  player: {fileID: 0}
+  waypointArray: []
+  activeLevelWaveData: {fileID: 0}
+  enemySpawner: {fileID: 0}
+  monsterSpawnDelay: 2
+  aliveEnemiesOfCurrentWave: []
 --- !u!1 &1814915811
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,7 +184,7 @@ GameObject:
   - component: {fileID: 1814915814}
   - component: {fileID: 1814915813}
   - component: {fileID: 1814915812}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -21,13 +21,13 @@ public class ItemDescriptionWindowController : MonoBehaviour
     public void OnEquipLeftButtonClick() {
         switch (activeItem.type) {
             case ItemType.Tool:
-                inventoryPanelController.EquipLeftHandTool(activeItem.itemName);
+                inventoryPanelController.EquipLeftHandTool(activeItem);
                 break;
             case ItemType.Weapon:
-                inventoryPanelController.EquipLeftHandWeapon(activeItem.itemName);
+                inventoryPanelController.EquipLeftHandWeapon(activeItem);
                 break;              
             case ItemType.Book:
-                inventoryPanelController.EquipBook(activeItem.itemName);
+                inventoryPanelController.EquipBook(activeItem);
                 break;
             default:
                 break;
@@ -39,13 +39,13 @@ public class ItemDescriptionWindowController : MonoBehaviour
     public void OnEquipRightButtonClick() {
         switch (activeItem.type) {
             case ItemType.Tool:
-                inventoryPanelController.EquipRightHandTool(activeItem.itemName);
+                inventoryPanelController.EquipRightHandTool(activeItem);
                 break;
             case ItemType.Weapon:
-                inventoryPanelController.EquipRightHandWeapon(activeItem.itemName);
+                inventoryPanelController.EquipRightHandWeapon(activeItem);
                 break;
             case ItemType.Book:
-                inventoryPanelController.EquipBook(activeItem.itemName);
+                inventoryPanelController.EquipBook(activeItem);
                 break;
             default:
                 break;

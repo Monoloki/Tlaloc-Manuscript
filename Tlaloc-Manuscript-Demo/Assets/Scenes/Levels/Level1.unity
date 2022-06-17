@@ -140,7 +140,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8754549168944832299, guid: 3dc4b1ba85e04cc409b2aa6c5b809df7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -146.37172
+      value: -151.35
       objectReference: {fileID: 0}
     - target: {fileID: 8754549168944832299, guid: 3dc4b1ba85e04cc409b2aa6c5b809df7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -148,7 +148,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8754549168944832299, guid: 3dc4b1ba85e04cc409b2aa6c5b809df7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 76.294205
+      value: 78.01
       objectReference: {fileID: 0}
     - target: {fileID: 8754549168944832299, guid: 3dc4b1ba85e04cc409b2aa6c5b809df7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -975,7 +975,7 @@ GameObject:
   - component: {fileID: 1808305334}
   - component: {fileID: 1808305333}
   - component: {fileID: 1808305332}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}

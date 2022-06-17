@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -40,6 +41,28 @@ public class FarmController : MonoBehaviour
     }
 
     private void BuyTower(Tower tower) {
-        Debug.Log($"You bought {tower.name}");
+
+        var slot = PlayerManager.instance.playerInventory.container.Find(inventoryslot => inventoryslot.item.type == ItemType.Gold);
+
+        if (tower.price <= slot.amount) {
+            PlayerManager.instance.playerInventory.RemoveItem(slot.item, tower.price);
+            PlayerManager.instance.towerInventory.AddItem(tower, 1);
+        }
+
+        FindObjectOfType<InventoryPanelController>().UpdateInventoryUI();
+
+        //InventoryPanelController.instance.UpdateInventoryUI();
+        Debug.Log("Succes buy");
+
+
+        try {
+            
+
+        }
+        catch (NullReferenceException ex) {
+            Debug.Log("Not enough gold");
+
+        }
     }
+
 }

@@ -22,28 +22,26 @@ public class Inventory : ScriptableObject
     }
 
     // Method to remove items with UI removing
-    public void RemoveItem(string itemName, int amount) {
+    public void RemoveItem(Item _item, int amount) {
 
         for (int i = 0; i < container.Count; i++) {
             
-            if (container[i].item.itemName == itemName) {
+            if (container[i].item.iD == _item.iD) {
 
                 if (container[i].amount <= amount) {
-                    container[i] = null;
+                    container.RemoveAt(i);
 
-
-                    Debug.Log($"Iitem: {itemName} has been removed");
+                    Debug.Log($"Iitem: {_item} has been removed");
                 }
                 else if (container[i].amount > amount ) {
                     var newAmount = container[i].amount -= amount;
 
-                    Debug.Log($"Iitem: {itemName}, in amount of: {amount} has been removed, amount left {newAmount}");
+                    Debug.Log($"Iitem: {_item}, in amount of: {amount} has been removed, amount left {newAmount}");
                 }
                 break;
             }          
         }
     }
-
 }
 
 [System.Serializable]

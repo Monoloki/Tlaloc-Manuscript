@@ -690,24 +690,6 @@ public partial class @XRIDefaultInputActions : IInputActionCollection2, IDisposa
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Teleport Select"",
-                    ""type"": ""Button"",
-                    ""id"": ""02e43582-8973-4940-af06-dff6158e3df2"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Teleport Mode Activate"",
-                    ""type"": ""Button"",
-                    ""id"": ""a6c7231d-c55d-4dd4-9e87-877bb5522ef5"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
                     ""name"": ""Teleport Mode Cancel"",
                     ""type"": ""Button"",
                     ""id"": ""d587b60c-39a0-4365-8075-477ce484ba0f"",
@@ -811,56 +793,12 @@ public partial class @XRIDefaultInputActions : IInputActionCollection2, IDisposa
                 },
                 {
                     ""name"": """",
-                    ""id"": ""62690862-4688-4010-975b-b3d9c6062157"",
-                    ""path"": ""<XRController>{RightHand}/Primary2DAxis"",
-                    ""interactions"": ""Sector(directions=1)"",
-                    ""processors"": """",
-                    ""groups"": ""Generic XR Controller"",
-                    ""action"": ""Teleport Mode Activate"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""90efd65e-3290-4798-af15-21ab4d7848b5"",
-                    ""path"": ""<XRController>{RightHand}/primaryButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Generic XR Controller"",
-                    ""action"": ""Teleport Mode Activate"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""de466e6e-12bf-46a1-b0fd-ffbc343f3399"",
                     ""path"": ""<XRController>{RightHand}/gripPressed"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Generic XR Controller"",
                     ""action"": ""Teleport Mode Cancel"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""919c4a6c-22ed-4083-8e14-f30e91ff59fe"",
-                    ""path"": ""<XRController>{RightHand}/Primary2DAxis"",
-                    ""interactions"": ""Sector(directions=-1,sweepBehavior=3)"",
-                    ""processors"": """",
-                    ""groups"": ""Generic XR Controller"",
-                    ""action"": ""Teleport Select"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""f7e6d19f-8306-47c9-8ca9-d3b6137565dc"",
-                    ""path"": ""<XRController>{RightHand}/primaryButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Generic XR Controller"",
-                    ""action"": ""Teleport Select"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -1126,7 +1064,7 @@ public partial class @XRIDefaultInputActions : IInputActionCollection2, IDisposa
                 {
                     ""name"": """",
                     ""id"": ""353007bc-c341-4e08-8708-fe54fb8aa207"",
-                    ""path"": ""<XRController>{RightHand}/primaryButton"",
+                    ""path"": ""<XRController>{RightHand}/triggerPressed"",
                     ""interactions"": ""Press"",
                     ""processors"": """",
                     ""groups"": """",
@@ -1233,8 +1171,6 @@ public partial class @XRIDefaultInputActions : IInputActionCollection2, IDisposa
         m_XRIRightHand_UIPress = m_XRIRightHand.FindAction("UI Press", throwIfNotFound: true);
         m_XRIRightHand_UIPressValue = m_XRIRightHand.FindAction("UI Press Value", throwIfNotFound: true);
         m_XRIRightHand_HapticDevice = m_XRIRightHand.FindAction("Haptic Device", throwIfNotFound: true);
-        m_XRIRightHand_TeleportSelect = m_XRIRightHand.FindAction("Teleport Select", throwIfNotFound: true);
-        m_XRIRightHand_TeleportModeActivate = m_XRIRightHand.FindAction("Teleport Mode Activate", throwIfNotFound: true);
         m_XRIRightHand_TeleportModeCancel = m_XRIRightHand.FindAction("Teleport Mode Cancel", throwIfNotFound: true);
         m_XRIRightHand_Turn = m_XRIRightHand.FindAction("Turn", throwIfNotFound: true);
         m_XRIRightHand_Move = m_XRIRightHand.FindAction("Move", throwIfNotFound: true);
@@ -1514,8 +1450,6 @@ public partial class @XRIDefaultInputActions : IInputActionCollection2, IDisposa
     private readonly InputAction m_XRIRightHand_UIPress;
     private readonly InputAction m_XRIRightHand_UIPressValue;
     private readonly InputAction m_XRIRightHand_HapticDevice;
-    private readonly InputAction m_XRIRightHand_TeleportSelect;
-    private readonly InputAction m_XRIRightHand_TeleportModeActivate;
     private readonly InputAction m_XRIRightHand_TeleportModeCancel;
     private readonly InputAction m_XRIRightHand_Turn;
     private readonly InputAction m_XRIRightHand_Move;
@@ -1535,8 +1469,6 @@ public partial class @XRIDefaultInputActions : IInputActionCollection2, IDisposa
         public InputAction @UIPress => m_Wrapper.m_XRIRightHand_UIPress;
         public InputAction @UIPressValue => m_Wrapper.m_XRIRightHand_UIPressValue;
         public InputAction @HapticDevice => m_Wrapper.m_XRIRightHand_HapticDevice;
-        public InputAction @TeleportSelect => m_Wrapper.m_XRIRightHand_TeleportSelect;
-        public InputAction @TeleportModeActivate => m_Wrapper.m_XRIRightHand_TeleportModeActivate;
         public InputAction @TeleportModeCancel => m_Wrapper.m_XRIRightHand_TeleportModeCancel;
         public InputAction @Turn => m_Wrapper.m_XRIRightHand_Turn;
         public InputAction @Move => m_Wrapper.m_XRIRightHand_Move;
@@ -1581,12 +1513,6 @@ public partial class @XRIDefaultInputActions : IInputActionCollection2, IDisposa
                 @HapticDevice.started -= m_Wrapper.m_XRIRightHandActionsCallbackInterface.OnHapticDevice;
                 @HapticDevice.performed -= m_Wrapper.m_XRIRightHandActionsCallbackInterface.OnHapticDevice;
                 @HapticDevice.canceled -= m_Wrapper.m_XRIRightHandActionsCallbackInterface.OnHapticDevice;
-                @TeleportSelect.started -= m_Wrapper.m_XRIRightHandActionsCallbackInterface.OnTeleportSelect;
-                @TeleportSelect.performed -= m_Wrapper.m_XRIRightHandActionsCallbackInterface.OnTeleportSelect;
-                @TeleportSelect.canceled -= m_Wrapper.m_XRIRightHandActionsCallbackInterface.OnTeleportSelect;
-                @TeleportModeActivate.started -= m_Wrapper.m_XRIRightHandActionsCallbackInterface.OnTeleportModeActivate;
-                @TeleportModeActivate.performed -= m_Wrapper.m_XRIRightHandActionsCallbackInterface.OnTeleportModeActivate;
-                @TeleportModeActivate.canceled -= m_Wrapper.m_XRIRightHandActionsCallbackInterface.OnTeleportModeActivate;
                 @TeleportModeCancel.started -= m_Wrapper.m_XRIRightHandActionsCallbackInterface.OnTeleportModeCancel;
                 @TeleportModeCancel.performed -= m_Wrapper.m_XRIRightHandActionsCallbackInterface.OnTeleportModeCancel;
                 @TeleportModeCancel.canceled -= m_Wrapper.m_XRIRightHandActionsCallbackInterface.OnTeleportModeCancel;
@@ -1636,12 +1562,6 @@ public partial class @XRIDefaultInputActions : IInputActionCollection2, IDisposa
                 @HapticDevice.started += instance.OnHapticDevice;
                 @HapticDevice.performed += instance.OnHapticDevice;
                 @HapticDevice.canceled += instance.OnHapticDevice;
-                @TeleportSelect.started += instance.OnTeleportSelect;
-                @TeleportSelect.performed += instance.OnTeleportSelect;
-                @TeleportSelect.canceled += instance.OnTeleportSelect;
-                @TeleportModeActivate.started += instance.OnTeleportModeActivate;
-                @TeleportModeActivate.performed += instance.OnTeleportModeActivate;
-                @TeleportModeActivate.canceled += instance.OnTeleportModeActivate;
                 @TeleportModeCancel.started += instance.OnTeleportModeCancel;
                 @TeleportModeCancel.performed += instance.OnTeleportModeCancel;
                 @TeleportModeCancel.canceled += instance.OnTeleportModeCancel;
@@ -1758,8 +1678,6 @@ public partial class @XRIDefaultInputActions : IInputActionCollection2, IDisposa
         void OnUIPress(InputAction.CallbackContext context);
         void OnUIPressValue(InputAction.CallbackContext context);
         void OnHapticDevice(InputAction.CallbackContext context);
-        void OnTeleportSelect(InputAction.CallbackContext context);
-        void OnTeleportModeActivate(InputAction.CallbackContext context);
         void OnTeleportModeCancel(InputAction.CallbackContext context);
         void OnTurn(InputAction.CallbackContext context);
         void OnMove(InputAction.CallbackContext context);

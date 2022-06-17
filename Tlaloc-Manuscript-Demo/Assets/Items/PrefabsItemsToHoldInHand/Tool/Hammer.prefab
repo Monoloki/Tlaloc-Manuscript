@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 2397084141604280911}
   - component: {fileID: 2397084141604280910}
   - component: {fileID: 3567187673388979046}
-  m_Layer: 0
+  - component: {fileID: 2107951190714151515}
+  m_Layer: 9
   m_Name: Hammer
   m_TagString: EquipItem
   m_Icon: {fileID: 0}
@@ -75,6 +76,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2671311073b20954cbb278e2b2056236, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2107951190714151515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2397084141604280897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19ede7f85a1c302429e2919cfc77f657, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2397084141875463763
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -85,6 +98,10 @@ PrefabInstance:
     - target: {fileID: 1085285520790580, guid: 9f64ed5ce0216394d91f836dbefecf5d, type: 3}
       propertyPath: m_Name
       value: hammer01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1085285520790580, guid: 9f64ed5ce0216394d91f836dbefecf5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4529112889726762, guid: 9f64ed5ce0216394d91f836dbefecf5d, type: 3}
       propertyPath: m_RootOrder

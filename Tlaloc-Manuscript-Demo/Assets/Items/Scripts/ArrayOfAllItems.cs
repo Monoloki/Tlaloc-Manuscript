@@ -6,7 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "ArrayOfItems", menuName = "Items/ArrayOfAllItems")]
 public class ArrayOfAllItems : ScriptableObject {
 
-    [ReadOnly, SerializeField]
+    [SerializeField]
     private int lastUsedID;
 
     public Item[] items;

@@ -16,10 +16,10 @@ TagManager:
   - Player
   - Water
   - UI
-  - 
+  - ArenaTerrain
   - Terrain
   - Loot
-  - 
+  - ToolsInHand
   - Enemy
   - 
   - 

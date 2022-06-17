@@ -33,6 +33,20 @@ public class LevelSpawn : MonoBehaviour
         if (!isCurrentlyRunningWave) {       
             StartCoroutine(FindObjectOfType<LevelController>().UnloadLevelScenes());
             TeleportPlayerToHub();
+
+            BuildingSystemSetup();
+        }
+    }
+
+    private void BuildingSystemSetup() {
+        var buildingUiController = FindObjectOfType<BuildingUiController>();
+        var buildingSystem = FindObjectOfType<BuildingSystem>();
+        buildingSystem.towerBuildingMode = false;
+        buildingUiController.towerBuildingMode = false;
+        buildingUiController.ResetActive();
+        //TODO: usuniêcie zespawnowanych potworów
+        foreach (var tower in buildingSystem.spawnedTowers) {
+            Destroy(tower.gameObject);
         }
     }
 

@@ -16,8 +16,8 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 78d9e2eea3aae094bbce0d95e14cce43, type: 3}
   requirements:
   - material: {fileID: 11400000, guid: f48494421600a964f90846bae05b47ed, type: 2}
-    requireAmount: 1
+    requireAmount: 5
   - material: {fileID: 11400000, guid: 44382ba3227151f488f5b99b14d04e7b, type: 2}
-    requireAmount: 1
+    requireAmount: 5
   - material: {fileID: 11400000, guid: 17294f480c8ac4540a5fc0c2bb9a2380, type: 2}
     requireAmount: 100

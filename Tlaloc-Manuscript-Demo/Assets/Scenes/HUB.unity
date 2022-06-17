@@ -185,6 +185,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7337482619376587377, guid: c48b28c5f178ebf4a8db30f41952ff08, type: 3}
   m_PrefabInstance: {fileID: 8202934}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &36582717 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7334857856489478383, guid: a9f74d1a730cbd74997d772eb118942c, type: 3}
+  m_PrefabInstance: {fileID: 6046191186345706598}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fe18a4675f64934692d686e9d301771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &51482586
 GameObject:
   m_ObjectHideFlags: 0
@@ -623,7 +634,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh21844
+  m_Name: pb_Mesh93478
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1572,6 +1583,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelController: {fileID: 565747578}
+  buildingUiController: {fileID: 36582717}
+  buildingSystem: {fileID: 7593006131627319171}
 --- !u!1 &381415799
 GameObject:
   m_ObjectHideFlags: 0
@@ -4141,26 +4154,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1394407509, guid: d2bf4fc2222b5fd4f9894c315f7d8f03, type: 3}
-      propertyPath: layoutGroup
-      value: 
-      objectReference: {fileID: 758103057847376696}
-    - target: {fileID: 1394407509, guid: d2bf4fc2222b5fd4f9894c315f7d8f03, type: 3}
-      propertyPath: segmentPrefab
-      value: 
-      objectReference: {fileID: 9018879651711102610, guid: 1606db43f47bd194298083ca9c76058b, type: 3}
-    - target: {fileID: 1394407509, guid: d2bf4fc2222b5fd4f9894c315f7d8f03, type: 3}
-      propertyPath: towersToBuy.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1394407509, guid: d2bf4fc2222b5fd4f9894c315f7d8f03, type: 3}
-      propertyPath: towersToBuy.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: 1ac34d665cafc6f4aaf49063b0bc21dd, type: 2}
-    - target: {fileID: 1394407509, guid: d2bf4fc2222b5fd4f9894c315f7d8f03, type: 3}
-      propertyPath: towersToBuy.Array.data[1]
-      value: 
-      objectReference: {fileID: 11400000, guid: 8d815511dce0d784384eef22ac236994, type: 2}
     - target: {fileID: 5521196033837686520, guid: d2bf4fc2222b5fd4f9894c315f7d8f03, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -4561,17 +4554,6 @@ Transform:
   m_Father: {fileID: 875630526}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!114 &758103057847376696 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 758103057847376696, guid: d2bf4fc2222b5fd4f9894c315f7d8f03, type: 3}
-  m_PrefabInstance: {fileID: 1811969101}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &907460902665706546
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4779,10 +4761,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8018208993837762467, guid: a9f74d1a730cbd74997d772eb118942c, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9f74d1a730cbd74997d772eb118942c, type: 3}
 --- !u!1 &7593006131627319170 stripped
@@ -4790,3 +4768,14 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4231030701140057060, guid: a9f74d1a730cbd74997d772eb118942c, type: 3}
   m_PrefabInstance: {fileID: 6046191186345706598}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7593006131627319171 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8684689098541934082, guid: a9f74d1a730cbd74997d772eb118942c, type: 3}
+  m_PrefabInstance: {fileID: 6046191186345706598}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7593006131627319170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26bfa4627b02a064790dd9c72c862580, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

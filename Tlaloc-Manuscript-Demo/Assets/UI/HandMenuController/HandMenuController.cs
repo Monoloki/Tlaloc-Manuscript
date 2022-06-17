@@ -8,7 +8,6 @@ public enum UIElement {
 
 public class HandMenuController : MonoBehaviour
 {
-    
     [SerializeField] private GameObject inventoryGameobject;
 
     public void ChangeWindowStatus(int uielement) {

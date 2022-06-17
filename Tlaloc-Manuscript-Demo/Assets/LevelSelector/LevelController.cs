@@ -26,7 +26,6 @@ public class LevelController : MonoBehaviour
     public void LoadLevelAsync() {
         scenesToLoad.Add(SceneManager.LoadSceneAsync(levelToLoad, LoadSceneMode.Additive));
         StartCoroutine(UnloadScenesLoadedWhilePlaying());
-
     }
 
     IEnumerator LoadingScene(int index) {

@@ -1326,6 +1326,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e06f8a939be116d46bd41e3a84d5443e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  segmentPrefab: {fileID: 9018879651711102610, guid: 1606db43f47bd194298083ca9c76058b, type: 3}
+  layoutGroup: {fileID: 758103057847376696}
+  towersToBuy:
+  - {fileID: 11400000, guid: 1ac34d665cafc6f4aaf49063b0bc21dd, type: 2}
+  - {fileID: 11400000, guid: 8d815511dce0d784384eef22ac236994, type: 2}
 --- !u!1 &5624424694034320946
 GameObject:
   m_ObjectHideFlags: 0

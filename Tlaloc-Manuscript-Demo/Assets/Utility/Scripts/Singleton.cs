@@ -1,18 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Singleton : MonoBehaviour
-{
-    public static Singleton Instance { get; private set; }
-    private void Awake() {
-        // If there is an instance, and it's not me, delete myself.
+public class Singleton<T> : MonoBehaviour where T : Singleton<T> {
+    public static T instance { get; private set; }
 
-        if (Instance != null && Instance != this) {
+    private void Awake() {
+        if (instance != null & instance != (T)this) {
             Destroy(this);
         }
         else {
-            Instance = this;
+            instance = (T)this;
         }
     }
 }

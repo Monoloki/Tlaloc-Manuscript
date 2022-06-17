@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerManager : MonoBehaviour
+public class PlayerManager : Singleton<PlayerManager>
 {
     public Inventory playerInventory;
+    public TowerInventory towerInventory;
     [SerializeField] private UIInventoryController uIInventory;
 
     private void OnTriggerEnter(Collider other) {

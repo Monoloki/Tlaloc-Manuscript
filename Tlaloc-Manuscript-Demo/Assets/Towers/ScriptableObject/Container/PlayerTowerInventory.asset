@@ -12,4 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14482b47a7d79ba4d9e2c965611f7724, type: 3}
   m_Name: PlayerTowerInventory
   m_EditorClassIdentifier: 
-  container: []
+  container:
+  - tower: {fileID: 11400000, guid: 1ac34d665cafc6f4aaf49063b0bc21dd, type: 2}
+    amount: 2
+  - tower: {fileID: 11400000, guid: 8d815511dce0d784384eef22ac236994, type: 2}
+    amount: 2

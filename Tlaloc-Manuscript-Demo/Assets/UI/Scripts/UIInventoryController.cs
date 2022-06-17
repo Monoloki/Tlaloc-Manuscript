@@ -37,7 +37,7 @@ public class UIInventoryController : MonoBehaviour {
             activeItemsSlots[_item] = slot;
         }         
 
-        AddAmountLabel(_item, 0);
+        UpdateUILabel(_item);
 
         if (!isInvoking) {
             StartCoroutine(TurnOffGridLayerGroup());
@@ -55,7 +55,7 @@ public class UIInventoryController : MonoBehaviour {
             activeItemsSlots.Add(_item, slot);
         }
 
-        AddAmountLabel(_item, 0);
+        UpdateUILabel(_item);
 
         if (!isInvoking) {
             StartCoroutine(TurnOffGridLayerGroup());
@@ -63,7 +63,6 @@ public class UIInventoryController : MonoBehaviour {
 
     }
 
-    // Remove UI method
     public void removeUISlot(Item _item) {
 
         Destroy(activeItemsSlots[_item].gameObject);
@@ -73,9 +72,9 @@ public class UIInventoryController : MonoBehaviour {
         }
     }
 
-    public void AddAmountLabel(Item _item, int _amountToAdd) {
-        var e = inventoryPanelController.FindItemInInventoryByName(_item.itemName).amount;
-        activeItemsSlots[_item].ItemLabel.text = $"{_item.itemName} \n {e + _amountToAdd}";
+    public void UpdateUILabel(Item item) {
+        var amount = inventoryPanelController.FindItemInInventory(item).amount;
+        activeItemsSlots[item].ItemLabel.text = $"{item.itemName} \n {amount}";
     }
 
     private IEnumerator TurnOffGridLayerGroup() {
