@@ -10,7 +10,6 @@ public class PortalController : MonoBehaviour
 
 
     private void OnTriggerEnter(Collider other) {
-        Debug.Log(other.gameObject.tag);
         if (other.gameObject.tag == "Player") {
             levelController.LoadLevelAsync();
 

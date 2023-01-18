@@ -16,7 +16,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 20
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1900038534879699462
 Transform:
@@ -98,7 +98,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 20
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &6684738759807929496
 Transform:
@@ -181,7 +181,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 20
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1183747606156780341
 Transform:
@@ -259,13 +259,13 @@ GameObject:
   - component: {fileID: 7337482619376587377}
   - component: {fileID: 2353497353112189294}
   - component: {fileID: 1808589438528282003}
-  - component: {fileID: 6019237141637079139}
+  - component: {fileID: -1194168200442860019}
   m_Layer: 0
   m_Name: Tree_Level1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 20
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &7337482619376587377
 Transform:
@@ -325,7 +325,7 @@ CapsuleCollider:
   m_Height: 5.371333
   m_Direction: 1
   m_Center: {x: 0.18, y: 2.1856666, z: 0}
---- !u!114 &6019237141637079139
+--- !u!114 &-1194168200442860019
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -334,10 +334,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 6019237141637079138}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3843b7ec776c784b8f3a8288915b175, type: 3}
+  m_Script: {fileID: 11500000, guid: a5743e39d2974fb43a325b3fef2605fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   lootTable:
   - item: {fileID: 6326093511518952470, guid: a5d43b018d0eba3448663fd11d1a812f, type: 3}
     chanceToDrop: 100
   durability: 4
+  type: 0

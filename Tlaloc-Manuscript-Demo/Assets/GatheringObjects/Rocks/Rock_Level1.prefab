@@ -16,7 +16,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 22
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &9035378763458041978
 Transform:
@@ -93,14 +93,14 @@ GameObject:
   - component: {fileID: 8184786195637937076}
   - component: {fileID: 6229257735109990270}
   - component: {fileID: 4734216994943355902}
-  - component: {fileID: 5580585112765626024}
+  - component: {fileID: -7601091362090910965}
   - component: {fileID: 1306695775}
   m_Layer: 0
   m_Name: Rock_Level1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 22
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5060330998031068177
 Transform:
@@ -189,7 +189,7 @@ LODGroup:
     renderers:
     - renderer: {fileID: 7150292795774430712}
   m_Enabled: 1
---- !u!114 &5580585112765626024
+--- !u!114 &-7601091362090910965
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -198,13 +198,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 5580585112765626027}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b4c744c91194d24d97356c1cc948393, type: 3}
+  m_Script: {fileID: 11500000, guid: a5743e39d2974fb43a325b3fef2605fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   lootTable:
   - item: {fileID: 2854940709836670796, guid: b3dea462137ce594099c11f43d62637d, type: 3}
     chanceToDrop: 100
   durability: 4
+  type: 1
 --- !u!65 &1306695775
 BoxCollider:
   m_ObjectHideFlags: 0

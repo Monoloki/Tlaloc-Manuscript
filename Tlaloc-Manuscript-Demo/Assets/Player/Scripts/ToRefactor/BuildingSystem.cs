@@ -85,14 +85,11 @@ public class BuildingSystem : MonoBehaviour {
 
     public int GetAmountOfSpawnedTower(Tower tower) {
         int amount = 0;
-        foreach (var spawned in spawnedTowers) {
-            
+        foreach (var spawned in spawnedTowers) {          
             if (spawned.name == tower.Prefab.name +"(Clone)") {
                 amount++;
             }
-            Debug.Log($"{spawned.name} == {tower.Prefab.name}");
         }
-        Debug.Log(amount);
         return amount;
     }
 
